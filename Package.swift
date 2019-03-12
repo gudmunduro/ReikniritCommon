@@ -22,7 +22,7 @@ let package = Package(
             name: "Common",
             dependencies: []),
         .testTarget(
-            name: "Common",
+            name: "CommonTests",
             dependencies: ["Common"]),
     ]
 )
