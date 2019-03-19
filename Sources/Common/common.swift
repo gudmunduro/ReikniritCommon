@@ -53,7 +53,7 @@ public enum GraphPosition {
     case NN
     case PN
 
-    static func find(x: Double, y: Double) -> GraphPosition
+    public static func find(x: Double, y: Double) -> GraphPosition
     {
         if x >= 0 && y > 0 {
             return .PP
@@ -89,21 +89,21 @@ public func pow(_ value: Int, _ power: Int) -> Int
 
 public class Menu {
 
-    let title: String
+    public let title: String
     public fileprivate(set) var options: [(text: String, option: () -> Void)]
 
-    init(title: String, options: [(text: String, option: () -> Void)])
+    public init(title: String, options: [(text: String, option: () -> Void)])
     {
         self.title = title
         self.options = options
     }
 
-    convenience init(options: [(text: String, option: () -> Void)])
+    public convenience init(options: [(text: String, option: () -> Void)])
     {
         self.init(title: "", options: options)
     }
 
-    func show()
+    public func show()
     {
         print(title)
         for i in 0..<options.count {
@@ -133,7 +133,7 @@ public class Menu {
 
 public extension Int {
 
-    static postfix func ++ (lhs: inout Int) -> Int {
+    public static postfix func ++ (lhs: inout Int) -> Int {
         lhs += 1
         return lhs
     }
@@ -141,7 +141,7 @@ public extension Int {
 
 public extension Double {
 
-    func rounded(decimals: Int) -> Double {
+    public func rounded(decimals: Int) -> Double {
         return (self * pow(10.0, Double(decimals))).rounded() / pow(10.0, Double(decimals))
     }
 
@@ -149,13 +149,13 @@ public extension Double {
 
 public extension String {
 
-    subscript (range: Range<Int>) -> String {
+    public subscript (range: Range<Int>) -> String {
         let startIndex = self.index(self.startIndex, offsetBy: range.lowerBound)
         let endIndex = self.index(self.startIndex, offsetBy: range.upperBound)
         return String(self[startIndex..<endIndex])
     }
 
-    subscript (value: Int) -> String {
+    public subscript (value: Int) -> String {
         let startIndex = self.index(self.startIndex, offsetBy: value)
         let endIndex = self.index(self.startIndex, offsetBy: value + 1)
         return String(self[startIndex..<endIndex])
@@ -164,13 +164,13 @@ public extension String {
 
 public extension Array {
 
-    mutating func swap(_ ind1: Int, _ ind2: Int) {
+    public mutating func swap(_ ind1: Int, _ ind2: Int) {
         let temp = self[ind1]
         self[ind1] = self[ind2]
         self[ind2] = temp
     }
 
-    func printAll() {
+    public func printAll() {
         for element in self {
             print(element)
         }
