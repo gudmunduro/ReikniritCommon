@@ -37,17 +37,17 @@ public func ask(_ message: String = "") -> Bool
     }
 }
 
-func deg(_ value: Double) -> Double
+public func deg(_ value: Double) -> Double
 {
     return value * 180 / Double.pi
 }
 
-func deg(_ value: Float) -> Float
+public func deg(_ value: Float) -> Float
 {
     return value * 180 / Float.pi
 }
 
-enum GraphPosition {
+public enum GraphPosition {
     case PP
     case NP
     case NN
@@ -131,7 +131,7 @@ public class Menu {
 
 // Extensions
 
-extension Int {
+public extension Int {
 
     static postfix func ++ (lhs: inout Int) -> Int {
         lhs += 1
@@ -139,7 +139,7 @@ extension Int {
     }
 }
 
-extension Double {
+public extension Double {
 
     func rounded(decimals: Int) -> Double {
         return (self * pow(10.0, Double(decimals))).rounded() / pow(10.0, Double(decimals))
@@ -147,7 +147,7 @@ extension Double {
 
 }
 
-extension String {
+public extension String {
 
     subscript (range: Range<Int>) -> String {
         let startIndex = self.index(self.startIndex, offsetBy: range.lowerBound)
@@ -162,7 +162,7 @@ extension String {
     }
 }
 
-extension Array {
+public extension Array {
 
     mutating func swap(_ ind1: Int, _ ind2: Int) {
         let temp = self[ind1]
