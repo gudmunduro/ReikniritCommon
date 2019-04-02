@@ -173,6 +173,16 @@ public extension String {
         }
         return false
     }
+
+    public func containsFromArray(_ array: [String]) -> Bool
+    {
+        for c in self {
+            if array.contains(String(c)) {
+                return true
+            }
+        }
+        return false
+    }
 }
 
 public extension Array {
