@@ -160,6 +160,19 @@ public extension String {
         let endIndex = self.index(self.startIndex, offsetBy: value + 1)
         return String(self[startIndex..<endIndex])
     }
+
+    public func containsFromArray(_ array: [Int]) -> Bool
+    {
+        for c in self {
+            guard let arrayElement = try! Int(String(c)) else {
+                continue
+            }
+            if array.contains(arrayElement) {
+                return true
+            }
+        }
+        return false
+    }
 }
 
 public extension Array {
